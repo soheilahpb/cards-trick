@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  background-color: #252b48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main > .photos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+main > .photos > figure {
+  display: flex;
+  border: 1px solid #252b48;
+  width: 270px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+main > .photos > figure:hover > .dark {
+  opacity: 1;
+}
+main > .photos > figure:hover > img {
+  top: -15%;
+}
+main > .photos > figure:hover > figcaption {
+  bottom: 60%;
+}
+main > .photos > figure > * {
+  position: absolute;
+}
+main > .photos > figure > img {
+  width: 100%;
+  height: 115%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  right: 0;
+  transition: 0.4s;
+}
+main > .photos > figure > .dark {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.61);
+  opacity: 0;
+  top: 0;
+  right: 0;
+  transition: 0.4s;
+}
+main > .photos > figure > figcaption, main > .photos > figure > div {
+  color: #F7E987;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: capitalize;
+  z-index: 100;
+}
+main > .photos > figure > figcaption {
+  width: 100%;
+  text-align: center;
+  left: 0;
+  bottom: 10%;
+  transition: 0.4s;
+  font-size: 2.5vw;
+}
+main > .photos > figure:hover > div {
+  bottom: 4px;
+}
+main > .photos > figure > div {
+  width: 100%;
+  bottom: -500px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20%;
+  transition: 0.4s;
+}
+main > .photos > figure > div > p {
+  font-size: 1.1vw;
+  text-align: center;
+}
+main > .photos > figure > div > a {
+  font-size: 1.1vw;
+  background-color: #252b48;
+  display: flex;
+  width: 100%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+main > .photos > figure > div > a:hover {
+  background-color: rgba(37, 43, 72, 0.479);
+}/*# sourceMappingURL=sass5.css.map */

@@ -1,0 +1,120 @@
+$back: #252b48;
+$txt1: #F7E987;
+$txt2: #5B9A8B;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: $back;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    >.photos {
+        // border: 10px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        height:auto;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-evenly;
+
+        >figure {
+            display: flex;
+            border: 1px solid $back;
+            width: 270px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+
+            &:hover>.dark {
+                opacity: 1;
+            }
+
+            &:hover>img {
+                top: -15%;
+            }
+            &:hover>figcaption{
+                bottom: 60%;
+            }
+            >*{
+                position: absolute;
+            }
+            >img {
+                width: 100%;
+                height: 115%;
+                object-fit: cover;
+                top: 0;
+                right: 0;
+                transition: 0.4s;
+            }
+
+            >.dark {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.61);
+                opacity: 0;
+                top: 0;
+                right: 0;
+                transition: 0.4s;
+            }
+            >figcaption , >div{
+                color: $txt1;
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                text-transform: capitalize;
+                z-index: 100;
+            }
+            >figcaption{
+                width: 100%;
+                text-align: center;
+                left: 0;
+                bottom: 10%;
+                transition: 0.4s;
+                font-size: 2.5vw;
+            }
+            &:hover>div{
+                bottom: 4px;
+            }
+            >div{
+                // border: 1px solid black;
+                width: 100%;
+                bottom: -500px;left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20%;
+                transition: 0.4s;
+                >p{
+                    font-size: 1.1vw;
+                    text-align: center;
+                }
+                >a{
+                    font-size: 1.1vw;
+                    background-color: $back;
+                    display: flex;
+                    width: 100%;
+                    height: 30px;
+                    justify-content: center;align-items: center;
+                    margin-top: 10px;
+                    &:hover{
+                        background-color: rgba(37, 43, 72, 0.479);
+                    }
+                }
+            }
+
+
+        }
+    }
+}
